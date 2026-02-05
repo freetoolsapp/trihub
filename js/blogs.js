@@ -83,7 +83,7 @@ function displayFeaturedPost(post) {
                     </span>
                 </div>
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 hover:text-blue-600 transition-colors duration-200">
-                    <a href="blog-post.html?id=${post.slug}">${post.title}</a>
+                    <a href="${post.file || 'blog-post.html?id=' + post.slug}">${post.title}</a>
                 </h3>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     ${post.excerpt}
@@ -95,7 +95,7 @@ function displayFeaturedPost(post) {
                         </div>
                         <span class="text-gray-700 font-medium">${post.author}</span>
                     </div>
-                    <a href="blog-post.html?id=${post.slug}" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
+                    <a href="${post.file || 'blog-post.html?id=' + post.slug}" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -174,14 +174,14 @@ function createBlogCard(post) {
                 </span>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-blue-600 transition-colors duration-200 line-clamp-2">
-                <a href="blog-post.html?id=${post.slug}">${post.title}</a>
+                <a href="${post.file || 'blog-post.html?id=' + post.slug}">${post.title}</a>
             </h3>
             <p class="text-gray-600 text-sm mb-4 line-clamp-3">
                 ${post.excerpt}
             </p>
             <div class="flex items-center justify-between text-xs text-gray-500">
                 <span><i class="fas fa-clock mr-1"></i>${post.readTime} min read</span>
-                <a href="blog-post.html?id=${post.slug}" class="text-blue-600 font-semibold hover:text-blue-800">
+                <a href="${post.file || 'blog-post.html?id=' + post.slug}" class="text-blue-600 font-semibold hover:text-blue-800">
                     Read More <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
