@@ -4,7 +4,7 @@
   "featured": {
     "id": "ai-tools-2026",
     "title": "10 AI Tools That Will Transform Your Workflow in 2026",
-    "slug": "ai-tools-transform-workflow-2026",
+    "slug": "ai-tools-2026",
     "excerpt": "Discover the most powerful AI tools of 2026 that are revolutionizing how professionals work. From content creation to data analysis, these tools will boost your productivity.",
     "content": "Full article content goes here...",
     "author": "TriHub Team",
@@ -13,13 +13,14 @@
     "image": "assets/blog/ai-tools-2026.jpg",
     "date": "2026-02-06",
     "readTime": 8,
-    "featured": true
+    "featured": true,
+    "file": "blog/ai-tools-2026.html"
   },
   "posts": [
     {
       "id": "ai-tools-2026",
       "title": "10 AI Tools That Will Transform Your Workflow in 2026",
-      "slug": "ai-tools-transform-workflow-2026",
+      "slug": "ai-tools-2026",
       "excerpt": "Discover the most powerful AI tools of 2026 that are revolutionizing how professionals work. From content creation to data analysis.",
       "author": "TriHub Team",
       "category": "technology",
@@ -27,7 +28,8 @@
       "image": "assets/blog/ai-tools-2026.jpg",
       "date": "2026-02-06",
       "readTime": 8,
-      "featured": true
+      "featured": true,
+      "file": "blog/ai-tools-2026.html"
     },
     {
       "id": "productivity-hacks",
