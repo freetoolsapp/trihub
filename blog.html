@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Blog - Expert Articles & Guides | TriHub</title>
+    <meta name="title" content="Blog - Expert Articles & Guides | TriHub">
+    <meta name="description" content="Read expert articles, tutorials, and guides on productivity, technology, SEO, and web development. Stay updated with latest trends.">
+    <meta name="keywords" content="blog, articles, tutorials, guides, technology, productivity, seo, web development">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/TriHub/blog.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50" role="banner">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3" aria-label="TriHub Home">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-xl" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-gray-800">TriHub</h1>
+                        <p class="text-xs text-gray-500">Tools • Blogs • Resources</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden md:flex items-center space-x-6" aria-label="Main Navigation">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-home mr-1" aria-hidden="true"></i>Home
+                    </a>
+                    <a href="index.html#tools" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-tools mr-1" aria-hidden="true"></i>Tools
+                    </a>
+                    <a href="blog.html" class="text-blue-600 font-medium transition-colors duration-200" aria-current="page">
+                        <i class="fas fa-blog mr-1" aria-hidden="true"></i>Blog
+                    </a>
+                    <a href="resources.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-book mr-1" aria-hidden="true"></i>Resources
+                    </a>
+                    <a href="contact.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-shadow duration-200">
+                        <i class="fas fa-envelope mr-1" aria-hidden="true"></i>Contact
+                    </a>
+                </nav>
+                
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-lg" aria-label="Toggle mobile menu" type="button">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-1 border-t border-gray-200 pt-4" aria-label="Mobile Navigation">
+                <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-home mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Home
+                </a>
+                <a href="index.html#tools" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-tools mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Tools
+                </a>
+                <a href="blog.html" class="block py-3 px-4 bg-blue-50 text-blue-600 rounded-lg font-medium">
+                    <i class="fas fa-blog mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Blog
+                </a>
+                <a href="resources.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-book mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Resources
+                </a>
+                <a href="contact.html" class="block py-3 px-4 text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:shadow-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-envelope mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b" aria-label="Breadcrumb">
+        <div class="container mx-auto px-4 py-3">
+            <ol class="flex items-center text-sm text-gray-600">
+                <li>
+                    <a href="index.html" class="hover:text-blue-600 transition-colors duration-200">
+                        <i class="fas fa-home mr-1" aria-hidden="true"></i>Home
+                    </a>
+                </li>
+                <li class="mx-2">/</li>
+                <li class="text-blue-600 font-medium">Blog</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <i class="fas fa-blog text-6xl opacity-90"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">TriHub Blog</h1>
+            <p class="text-xl md:text-2xl mb-8">Expert Articles, Tutorials & Guides</p>
+            <div class="max-w-xl mx-auto">
+                <div class="relative">
+                    <input 
+                        type="search" 
+                        id="blogSearch"
+                        placeholder="Search articles..." 
+                        class="w-full px-6 py-4 pr-12 rounded-lg text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-shadow duration-200" 
+                    />
+                    <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="bg-white shadow-sm py-4 sticky top-20 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-2 justify-center text-sm">
+                <button onclick="filterBlogs('all')" class="category-btn active px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                    <i class="fas fa-th mr-1"></i>All Articles
+                </button>
+                <button onclick="filterBlogs('technology')" class="category-btn px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                    <i class="fas fa-laptop-code mr-1"></i>Technology
+                </button>
+                <button onclick="filterBlogs('productivity')" class="category-btn px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                    <i class="fas fa-chart-line mr-1"></i>Productivity
+                </button>
+                <button onclick="filterBlogs('seo')" class="category-btn px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                    <i class="fas fa-search mr-1"></i>SEO
+                </button>
+                <button onclick="filterBlogs('design')" class="category-btn px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                    <i class="fas fa-palette mr-1"></i>Design
+                </button>
+                <button onclick="filterBlogs('tutorials')" class="category-btn px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                    <i class="fas fa-graduation-cap mr-1"></i>Tutorials
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <main class="py-12" role="main">
+        <div class="container mx-auto px-4">
+            
+            <!-- Featured Post -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-star text-yellow-500 mr-3"></i>
+                    Featured Article
+                </h2>
+                <div id="featuredPost" class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <!-- Featured post will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Recent Articles -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-newspaper text-blue-600 mr-3"></i>
+                    Recent Articles
+                </h2>
+            </div>
+
+            <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog posts will be loaded here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-200">
+                    <i class="fas fa-plus-circle mr-2"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <i class="fas fa-envelope-open-text text-5xl mb-4 opacity-90"></i>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to our newsletter and get the latest articles delivered to your inbox.</p>
+            <div class="max-w-md mx-auto">
+                <form id="newsletterForm" class="flex gap-2">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-yellow-300"
+                        required
+                    />
+                    <button type="submit" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-200">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">
+                        <i class="fas fa-cube mr-2" aria-hidden="true"></i>TriHub
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-4">Your 3-in-1 hub for free online tools, expert blogs, and curated resources.</p>
+                    <p class="text-gray-400 text-xs">© 2026 TriHub. All rights reserved.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="index.html#tools" class="hover:text-white transition-colors duration-200">Tools</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors duration-200">Blog</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors duration-200">Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Blog Categories</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" onclick="filterBlogs('technology')" class="hover:text-white transition-colors duration-200">Technology</a></li>
+                        <li><a href="#" onclick="filterBlogs('productivity')" class="hover:text-white transition-colors duration-200">Productivity</a></li>
+                        <li><a href="#" onclick="filterBlogs('seo')" class="hover:text-white transition-colors duration-200">SEO</a></li>
+                        <li><a href="#" onclick="filterBlogs('design')" class="hover:text-white transition-colors duration-200">Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 text-2xl mb-4">
+                        <a href="#" class="hover:text-blue-400 transition-colors duration-200" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-600 transition-colors duration-200" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-500 transition-colors duration-200" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="hover:text-pink-500 transition-colors duration-200" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200 hidden" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
