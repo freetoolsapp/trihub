@@ -1,0 +1,169 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-06",
+  "categories": [
+    {
+      "id": "utility",
+      "name": "Utility Tools",
+      "icon": "fa-wrench",
+      "description": "Essential utility tools for everyday tasks"
+    },
+    {
+      "id": "student",
+      "name": "Student Tools",
+      "icon": "fa-graduation-cap",
+      "description": "Academic and learning tools for students"
+    },
+    {
+      "id": "design",
+      "name": "Design Tools",
+      "icon": "fa-palette",
+      "description": "Creative tools for designers"
+    },
+    {
+      "id": "webdev",
+      "name": "Web Development",
+      "icon": "fa-code",
+      "description": "Tools for web developers"
+    },
+    {
+      "id": "seo",
+      "name": "SEO Tools",
+      "icon": "fa-chart-line",
+      "description": "Search engine optimization tools"
+    },
+    {
+      "id": "social",
+      "name": "Social Media",
+      "icon": "fa-share-alt",
+      "description": "Social media management tools"
+    }
+  ],
+  "tools": [
+    {
+      "id": "pdf-to-word",
+      "name": "PDF to Word Converter",
+      "description": "Convert PDF files to editable Word documents",
+      "icon": "fa-file-word",
+      "color": "blue",
+      "category": "utility",
+      "badge": "HOT",
+      "file": "tools/utility/pdf-to-word.html",
+      "featured": true,
+      "tags": ["pdf", "word", "converter", "document"]
+    },
+    {
+      "id": "qr-generator",
+      "name": "QR Code Generator",
+      "description": "Create QR codes for URLs, text, WiFi, and more",
+      "icon": "fa-qrcode",
+      "color": "blue",
+      "category": "utility",
+      "badge": "POPULAR",
+      "file": "tools/utility/qrcode-generator.html",
+      "featured": true,
+      "tags": ["qr", "code", "generator", "barcode"]
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "description": "Generate strong and secure passwords instantly",
+      "icon": "fa-key",
+      "color": "red",
+      "category": "utility",
+      "badge": "NEW",
+      "file": "tools/utility/password-generator.html",
+      "featured": false,
+      "tags": ["password", "security", "generator"]
+    },
+    {
+      "id": "gpa-calculator",
+      "name": "GPA Calculator",
+      "description": "Calculate your GPA instantly",
+      "icon": "fa-calculator",
+      "color": "teal",
+      "category": "student",
+      "badge": "POPULAR",
+      "file": "tools/student/gpa-calculator.html",
+      "featured": true,
+      "tags": ["gpa", "calculator", "student", "grades"]
+    },
+    {
+      "id": "plagiarism-checker",
+      "name": "Plagiarism Checker",
+      "description": "Check for plagiarism in your content",
+      "icon": "fa-search",
+      "color": "red",
+      "category": "student",
+      "badge": "HOT",
+      "file": "tools/student/plagiarism-checker.html",
+      "featured": true,
+      "tags": ["plagiarism", "checker", "content", "duplicate"]
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "description": "Resize images quickly and easily",
+      "icon": "fa-expand",
+      "color": "blue",
+      "category": "design",
+      "badge": "NEW",
+      "file": "tools/design/image-resizer.html",
+      "featured": false,
+      "tags": ["image", "resize", "compress", "photo"]
+    },
+    {
+      "id": "html-minifier",
+      "name": "HTML Minifier",
+      "description": "Minify HTML code for better performance",
+      "icon": "fa-compress-arrows-alt",
+      "color": "orange",
+      "category": "webdev",
+      "badge": "HOT",
+      "file": "tools/webdev/html-minifier.html",
+      "featured": false,
+      "tags": ["html", "minify", "compress", "optimize"]
+    },
+    {
+      "id": "css-minifier",
+      "name": "CSS Minifier",
+      "description": "Compress CSS code for faster loading",
+      "icon": "fa-file-code",
+      "color": "blue",
+      "category": "webdev",
+      "badge": "NEW",
+      "file": "tools/webdev/css-minifier.html",
+      "featured": false,
+      "tags": ["css", "minify", "compress", "optimize"]
+    },
+    {
+      "id": "meta-description-generator",
+      "name": "Meta Description Generator",
+      "description": "Create compelling meta descriptions for SEO",
+      "icon": "fa-code",
+      "color": "indigo",
+      "category": "seo",
+      "badge": "POPULAR",
+      "file": "tools/seo/meta-description-generator.html",
+      "featured": true,
+      "tags": ["meta", "seo", "description", "generator"]
+    },
+    {
+      "id": "keyword-density-checker",
+      "name": "Keyword Density Checker",
+      "description": "Analyze keyword density in your content",
+      "icon": "fa-chart-bar",
+      "color": "blue",
+      "category": "seo",
+      "badge": "HOT",
+      "file": "tools/seo/keyword-density-checker.html",
+      "featured": false,
+      "tags": ["keyword", "density", "seo", "analysis"]
+    }
+  ],
+  "stats": {
+    "totalTools": 10,
+    "categories": 6,
+    "featuredTools": 5
+  }
+}
