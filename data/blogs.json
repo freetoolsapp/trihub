@@ -1,0 +1,192 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-06",
+  "featured": {
+    "id": "ai-tools-2026",
+    "title": "10 AI Tools That Will Transform Your Workflow in 2026",
+    "slug": "ai-tools-transform-workflow-2026",
+    "excerpt": "Discover the most powerful AI tools of 2026 that are revolutionizing how professionals work. From content creation to data analysis, these tools will boost your productivity.",
+    "content": "Full article content goes here...",
+    "author": "TriHub Team",
+    "category": "technology",
+    "tags": ["AI", "Productivity", "Technology", "Tools"],
+    "image": "assets/blog/ai-tools-2026.jpg",
+    "date": "2026-02-06",
+    "readTime": 8,
+    "featured": true
+  },
+  "posts": [
+    {
+      "id": "ai-tools-2026",
+      "title": "10 AI Tools That Will Transform Your Workflow in 2026",
+      "slug": "ai-tools-transform-workflow-2026",
+      "excerpt": "Discover the most powerful AI tools of 2026 that are revolutionizing how professionals work. From content creation to data analysis.",
+      "author": "TriHub Team",
+      "category": "technology",
+      "tags": ["AI", "Productivity", "Technology"],
+      "image": "assets/blog/ai-tools-2026.jpg",
+      "date": "2026-02-06",
+      "readTime": 8,
+      "featured": true
+    },
+    {
+      "id": "productivity-hacks",
+      "title": "15 Productivity Hacks Every Professional Should Know",
+      "slug": "productivity-hacks-professionals",
+      "excerpt": "Boost your productivity with these proven techniques. Learn time management strategies that actually work.",
+      "author": "TriHub Team",
+      "category": "productivity",
+      "tags": ["Productivity", "Time Management", "Tips"],
+      "image": "assets/blog/productivity-hacks.jpg",
+      "date": "2026-02-05",
+      "readTime": 6,
+      "featured": false
+    },
+    {
+      "id": "seo-guide-2026",
+      "title": "Complete SEO Guide for 2026: From Basics to Advanced",
+      "slug": "complete-seo-guide-2026",
+      "excerpt": "Master SEO in 2026 with this comprehensive guide covering keyword research, on-page optimization, and link building.",
+      "author": "TriHub Team",
+      "category": "seo",
+      "tags": ["SEO", "Marketing", "Guide"],
+      "image": "assets/blog/seo-guide-2026.jpg",
+      "date": "2026-02-04",
+      "readTime": 12,
+      "featured": false
+    },
+    {
+      "id": "web-design-trends",
+      "title": "Top Web Design Trends to Watch in 2026",
+      "slug": "web-design-trends-2026",
+      "excerpt": "Stay ahead of the curve with these emerging web design trends. From minimalism to interactive elements.",
+      "author": "TriHub Team",
+      "category": "design",
+      "tags": ["Design", "Web Design", "Trends"],
+      "image": "assets/blog/design-trends-2026.jpg",
+      "date": "2026-02-03",
+      "readTime": 7,
+      "featured": false
+    },
+    {
+      "id": "javascript-tips",
+      "title": "10 JavaScript Tips Every Developer Should Know",
+      "slug": "javascript-tips-developers",
+      "excerpt": "Level up your JavaScript skills with these essential tips and tricks used by professional developers.",
+      "author": "TriHub Team",
+      "category": "tutorials",
+      "tags": ["JavaScript", "Programming", "Tutorial"],
+      "image": "assets/blog/javascript-tips.jpg",
+      "date": "2026-02-02",
+      "readTime": 9,
+      "featured": false
+    },
+    {
+      "id": "social-media-strategy",
+      "title": "Building a Winning Social Media Strategy in 2026",
+      "slug": "social-media-strategy-2026",
+      "excerpt": "Create a powerful social media presence with these proven strategies for Instagram, Twitter, and LinkedIn.",
+      "author": "TriHub Team",
+      "category": "technology",
+      "tags": ["Social Media", "Marketing", "Strategy"],
+      "image": "assets/blog/social-media.jpg",
+      "date": "2026-02-01",
+      "readTime": 10,
+      "featured": false
+    },
+    {
+      "id": "remote-work-tools",
+      "title": "Essential Tools for Remote Work Success",
+      "slug": "remote-work-tools-success",
+      "excerpt": "Discover the best tools and apps that make remote work easier and more productive.",
+      "author": "TriHub Team",
+      "category": "productivity",
+      "tags": ["Remote Work", "Tools", "Productivity"],
+      "image": "assets/blog/remote-work.jpg",
+      "date": "2026-01-31",
+      "readTime": 5,
+      "featured": false
+    },
+    {
+      "id": "content-marketing",
+      "title": "Content Marketing: A Complete Beginner's Guide",
+      "slug": "content-marketing-beginners-guide",
+      "excerpt": "Learn the fundamentals of content marketing and how to create content that drives results.",
+      "author": "TriHub Team",
+      "category": "seo",
+      "tags": ["Content Marketing", "SEO", "Guide"],
+      "image": "assets/blog/content-marketing.jpg",
+      "date": "2026-01-30",
+      "readTime": 11,
+      "featured": false
+    },
+    {
+      "id": "ui-ux-principles",
+      "title": "UI/UX Design Principles That Matter",
+      "slug": "ui-ux-design-principles",
+      "excerpt": "Master the core principles of UI/UX design to create better user experiences.",
+      "author": "TriHub Team",
+      "category": "design",
+      "tags": ["UI/UX", "Design", "Principles"],
+      "image": "assets/blog/ui-ux.jpg",
+      "date": "2026-01-29",
+      "readTime": 8,
+      "featured": false
+    },
+    {
+      "id": "python-automation",
+      "title": "Automate Your Tasks with Python: A Practical Guide",
+      "slug": "python-automation-guide",
+      "excerpt": "Learn how to automate repetitive tasks using Python scripts. Includes real-world examples.",
+      "author": "TriHub Team",
+      "category": "tutorials",
+      "tags": ["Python", "Automation", "Tutorial"],
+      "image": "assets/blog/python-automation.jpg",
+      "date": "2026-01-28",
+      "readTime": 13,
+      "featured": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "technology",
+      "name": "Technology",
+      "slug": "technology",
+      "icon": "fa-laptop-code",
+      "color": "blue"
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "slug": "productivity",
+      "icon": "fa-chart-line",
+      "color": "green"
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "slug": "seo",
+      "icon": "fa-search",
+      "color": "purple"
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "slug": "design",
+      "icon": "fa-palette",
+      "color": "pink"
+    },
+    {
+      "id": "tutorials",
+      "name": "Tutorials",
+      "slug": "tutorials",
+      "icon": "fa-graduation-cap",
+      "color": "indigo"
+    }
+  ],
+  "stats": {
+    "totalPosts": 10,
+    "categories": 5,
+    "authors": 1
+  }
+}
