@@ -1,0 +1,103 @@
+# TriHub - Git Ignore File
+
+# ===========================
+# Operating System Files
+# ===========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ===========================
+# Editor/IDE Files
+# ===========================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ===========================
+# Node.js (if used later)
+# ===========================
+
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ===========================
+# Logs
+# ===========================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===========================
+# Build/Dist Files
+# ===========================
+
+dist/
+build/
+.cache/
+*.min.js
+*.min.css
+
+# ===========================
+# Temporary Files
+# ===========================
+
+temp/
+tmp/
+*.tmp
+*.bak
+*.backup
+
+# ===========================
+# Environment Files
+# ===========================
+
+.env
+.env.local
+.env.*.local
+
+# ===========================
+# Testing
+# ===========================
+
+coverage/
+.nyc_output/
+
+# ===========================
+# Misc
+# ===========================
+
+*.lock
