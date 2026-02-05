@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>TriHub - Free Tools, Expert Blogs & Curated Resources</title>
+    <meta name="title" content="TriHub - Free Tools, Expert Blogs & Curated Resources">
+    <meta name="description" content="Your 3-in-1 digital hub for free online tools, expert blogs, and curated resources. Fast, secure & easy to use.">
+    <meta name="keywords" content="trihub, free tools, online tools, resources, blogs, digital hub">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://freetoolsapp.github.io/free-tools-hub/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        /* Mobile Menu Animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+                transform: translateY(0);
+            }
+        }
+        
+        #mobileMenu {
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #mobileMenu:not(.hidden) {
+            animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50" role="banner">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3" aria-label="TriHub Home">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-xl" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-gray-800">TriHub</h1>
+                        <p class="text-xs text-gray-500">Tools • Blogs • Resources</p>
+                    </div>
+                </a>
+                
+                <nav class="hidden md:flex items-center space-x-6" aria-label="Main Navigation">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-home mr-1" aria-hidden="true"></i>Home
+                    </a>
+                    <a href="#tools" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-tools mr-1" aria-hidden="true"></i>Tools
+                    </a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-blog mr-1" aria-hidden="true"></i>Blog
+                    </a>
+                    <a href="resources.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <i class="fas fa-book mr-1" aria-hidden="true"></i>Resources
+                    </a>
+                    <a href="contact.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-shadow duration-200">
+                        <i class="fas fa-envelope mr-1" aria-hidden="true"></i>Contact
+                    </a>
+                </nav>
+                
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-lg" aria-label="Toggle mobile menu" type="button">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-1 border-t border-gray-200 pt-4" aria-label="Mobile Navigation">
+                <a href="#" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-home mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Home
+                </a>
+                <a href="#tools" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-tools mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Tools
+                </a>
+                <a href="blog.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-blog mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Blog
+                </a>
+                <a href="resources.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-book mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Resources
+                </a>
+                <a href="contact.html" class="block py-3 px-4 text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:shadow-lg transition-all duration-200 font-medium">
+                    <i class="fas fa-envelope mr-3 w-5 text-center inline-block" aria-hidden="true"></i>Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-20" role="region" aria-label="Hero section">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <div class="inline-block bg-white/20 px-6 py-2 rounded-full backdrop-blur">
+                    <i class="fas fa-cube text-yellow-300 mr-2" aria-hidden="true"></i>
+                    <span class="font-bold">Your 3-in-1 Digital Hub</span>
+                </div>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">Welcome to TriHub</h2>
+            <p class="text-xl md:text-2xl mb-8">Free Tools • Expert Blogs • Curated Resources</p>
+            <div class="max-w-2xl mx-auto">
+                <input 
+                    type="search" 
+                    placeholder="Search tools, blogs, resources..." 
+                    class="w-full px-6 py-4 rounded-lg text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-shadow duration-200" 
+                    aria-label="Search"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="py-12" role="main">
+        <div class="container mx-auto px-4">
+            <div class="text-center py-20">
+                <i class="fas fa-cube text-gray-300 text-6xl mb-4"></i>
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Welcome to TriHub</h3>
+                <p class="text-gray-600 text-lg mb-2">Your 3-in-1 Digital Hub</p>
+                <p class="text-gray-500">Tools, Blogs, and Resources coming soon...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">
+                        <i class="fas fa-cube mr-2" aria-hidden="true"></i>TriHub
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-4">Your 3-in-1 hub for free online tools, expert blogs, and curated resources. Fast, secure & easy to use.</p>
+                    <p class="text-gray-400 text-xs">© 2026 TriHub. All rights reserved.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="#tools" class="hover:text-white transition-colors duration-200">Tools</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors duration-200">Blog</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors duration-200">Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors duration-200">Contact</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors duration-200">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 text-2xl mb-4">
+                        <a href="#" class="hover:text-blue-400 transition-colors duration-200" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-600 transition-colors duration-200" aria-label="Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="hover:text-red-500 transition-colors duration-200" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="hover:text-pink-500 transition-colors duration-200" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200 hidden" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+                
+                // Close menu when clicking on links
+                const menuLinks = mobileMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                            const icon = mobileMenuBtn.querySelector('i');
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }, 200);
+                    });
+                });
+            }
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.remove('hidden');
+                    } else {
+                        backToTopBtn.classList.add('hidden');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
