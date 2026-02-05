@@ -23,37 +23,7 @@
     <!-- Stylesheets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Styles -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-        
-        /* Mobile Menu Animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                max-height: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                max-height: 500px;
-                transform: translateY(0);
-            }
-        }
-        
-        #mobileMenu {
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        #mobileMenu:not(.hidden) {
-            animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
@@ -204,51 +174,6 @@
     </button>
 
     <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    mobileMenu.classList.toggle('hidden');
-                    const icon = this.querySelector('i');
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                });
-                
-                // Close menu when clicking on links
-                const menuLinks = mobileMenu.querySelectorAll('a');
-                menuLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        setTimeout(() => {
-                            mobileMenu.classList.add('hidden');
-                            const icon = mobileMenuBtn.querySelector('i');
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }, 200);
-                    });
-                });
-            }
-
-            // Back to Top Button
-            const backToTopBtn = document.getElementById('backToTop');
-            if (backToTopBtn) {
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopBtn.classList.remove('hidden');
-                    } else {
-                        backToTopBtn.classList.add('hidden');
-                    }
-                });
-
-                backToTopBtn.addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
