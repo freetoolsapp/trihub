@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Name - TriHub</title>
+    <meta name="description" content="Tool description goes here">
+    
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Simple Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../../index.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="font-medium">Back to TriHub</span>
+                </a>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-cube text-blue-600"></i>
+                    <span class="font-bold text-gray-800">TriHub</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tool Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        
+        <!-- Tool Header -->
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-tools text-white text-2xl"></i>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Tool Name</h1>
+            <p class="text-gray-600 text-lg">Tool description and what it does</p>
+        </div>
+
+        <!-- Tool Interface Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+            
+            <!-- Instructions -->
+            <div class="mb-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    <strong>How to use:</strong> Step-by-step instructions go here.
+                </p>
+            </div>
+
+            <!-- Tool Form/Interface -->
+            <div class="space-y-4">
+                
+                <!-- Input Area -->
+                <div>
+                    <label for="toolInput" class="block text-sm font-medium text-gray-700 mb-2">
+                        Input Label
+                    </label>
+                    <textarea 
+                        id="toolInput" 
+                        rows="6" 
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="Enter your input here..."
+                    ></textarea>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-3">
+                    <button 
+                        id="processBtn"
+                        class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow duration-200"
+                    >
+                        <i class="fas fa-play mr-2"></i>
+                        Process
+                    </button>
+                    <button 
+                        id="clearBtn"
+                        class="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200"
+                    >
+                        <i class="fas fa-times mr-2"></i>
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Output Area -->
+                <div id="outputSection" class="hidden">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Output
+                    </label>
+                    <div class="p-4 bg-gray-50 border border-gray-300 rounded-lg">
+                        <div id="toolOutput" class="text-gray-700">
+                            Output will appear here
+                        </div>
+                    </div>
+                    <button 
+                        id="copyBtn"
+                        class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200"
+                    >
+                        <i class="fas fa-copy mr-2"></i>
+                        Copy Result
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Features/Benefits -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="text-center p-4">
+                <i class="fas fa-bolt text-blue-600 text-3xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800 mb-1">Fast</h3>
+                <p class="text-sm text-gray-600">Lightning quick processing</p>
+            </div>
+            <div class="text-center p-4">
+                <i class="fas fa-shield-alt text-green-600 text-3xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800 mb-1">Secure</h3>
+                <p class="text-sm text-gray-600">Your data stays private</p>
+            </div>
+            <div class="text-center p-4">
+                <i class="fas fa-check-circle text-purple-600 text-3xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800 mb-1">Free</h3>
+                <p class="text-sm text-gray-600">100% free to use</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm text-gray-400">
+                <a href="../../index.html" class="hover:text-white">TriHub</a> - Your 3-in-1 Digital Hub
+            </p>
+        </div>
+    </footer>
+
+    <!-- Tool JavaScript -->
+    <script>
+        // Tool-specific functionality goes here
+        
+        document.getElementById('processBtn').addEventListener('click', function() {
+            const input = document.getElementById('toolInput').value;
+            
+            if (!input.trim()) {
+                alert('Please enter some input first!');
+                return;
+            }
+            
+            // Process the input (implement tool logic here)
+            const output = processInput(input);
+            
+            // Show output
+            document.getElementById('toolOutput').textContent = output;
+            document.getElementById('outputSection').classList.remove('hidden');
+        });
+        
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('toolInput').value = '';
+            document.getElementById('outputSection').classList.add('hidden');
+        });
+        
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const output = document.getElementById('toolOutput').textContent;
+            navigator.clipboard.writeText(output).then(() => {
+                const btn = this;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+        
+        // Main processing function (customize for each tool)
+        function processInput(input) {
+            // Implement your tool's logic here
+            return `Processed: ${input}`;
+        }
+    </script>
+</body>
+</html>
