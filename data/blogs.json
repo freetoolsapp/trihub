@@ -35,14 +35,15 @@
       "id": "productivity-hacks",
       "title": "15 Productivity Hacks Every Professional Should Know",
       "slug": "productivity-hacks-professionals",
-      "excerpt": "Boost your productivity with these proven techniques. Learn time management strategies that actually work.",
+      "excerpt": "Boost your productivity with these proven techniques. Learn time management strategies, focus techniques, and workflow automation that actually work.",
       "author": "TriHub Team",
       "category": "productivity",
       "tags": ["Productivity", "Time Management", "Tips"],
       "image": "assets/blog/productivity-hacks.jpg",
       "date": "2026-02-05",
       "readTime": 6,
-      "featured": false
+      "featured": false,
+      "file": "blog/productivity-hacks-professionals.html"
     },
     {
       "id": "seo-guide-2026",
