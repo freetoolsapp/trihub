@@ -1,17 +1,21 @@
 /**
- * TriHub - Main JavaScript
- * All core functionality for the website
+ * TriHub - Main JavaScript (Enhanced v2.0)
+ * All core functionality for the website with tool loading
  */
 
 // Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 TriHub initialized');
+    console.log('🚀 TriHub initialized - v2.0');
     
     // Initialize all components
     initMobileMenu();
     initBackToTop();
     initSearchFunctionality();
     initSmoothScroll();
+    initCategoryFilter();
+    
+    // Load tools automatically
+    loadTools();
 });
 
 /**
@@ -111,7 +115,7 @@ function initBackToTop() {
 }
 
 /**
- * Search Functionality (basic implementation)
+ * Search Functionality with Tool Filtering
  */
 function initSearchFunctionality() {
     const searchInput = document.querySelector('input[type="search"]');
@@ -123,22 +127,38 @@ function initSearchFunctionality() {
     
     console.log('✅ Search functionality initialized');
     
-    searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
+    // Store all tools globally for search
+    window.allTools = [];
+    
+    searchInput.addEventListener('input', debounce(function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
         
-        if (searchTerm.length > 2) {
-            console.log('🔍 Searching for:', searchTerm);
-            // Future: Implement actual search functionality here
-            // This will search through tools, blogs, and resources
+        if (searchTerm.length === 0) {
+            // Show all tools
+            loadTools();
+            return;
         }
-    });
+        
+        if (searchTerm.length < 2) return;
+        
+        console.log('🔍 Searching for:', searchTerm);
+        
+        // Filter tools based on search term
+        const filteredTools = window.allTools.filter(tool => {
+            return tool.name.toLowerCase().includes(searchTerm) ||
+                   tool.description.toLowerCase().includes(searchTerm) ||
+                   tool.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
+                   tool.category.toLowerCase().includes(searchTerm);
+        });
+        
+        displayTools(filteredTools);
+        
+        console.log(`📊 Found ${filteredTools.length} matching tools`);
+    }, 300));
     
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             e.preventDefault();
-            const searchTerm = e.target.value.toLowerCase();
-            console.log('🔍 Search submitted:', searchTerm);
-            // Future: Handle search submission
         }
     });
 }
@@ -169,33 +189,51 @@ function initSmoothScroll() {
 }
 
 /**
+ * Initialize Category Filter
+ */
+function initCategoryFilter() {
+    console.log('✅ Category filter initialized');
+}
+
+/**
  * Filter Tools by Category
- * This will be used when tools are added
  */
 function filterTools(category) {
     console.log('🔍 Filtering tools by category:', category);
     
     // Update active button
     document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('active');
+        btn.classList.remove('active', 'bg-blue-600', 'text-white');
+        btn.classList.add('bg-gray-200', 'text-gray-700');
         btn.setAttribute('aria-selected', 'false');
     });
     
     // Set clicked button as active
-    event.target.closest('.category-btn').classList.add('active');
-    event.target.closest('.category-btn').setAttribute('aria-selected', 'true');
+    const clickedBtn = event.target.closest('.category-btn');
+    if (clickedBtn) {
+        clickedBtn.classList.remove('bg-gray-200', 'text-gray-700');
+        clickedBtn.classList.add('active', 'bg-blue-600', 'text-white');
+        clickedBtn.setAttribute('aria-selected', 'true');
+    }
     
-    // Future: Implement actual filtering logic here
-    // This will filter tools based on category
+    // Filter and display tools
+    if (category === 'all') {
+        displayTools(window.allTools);
+    } else {
+        const filteredTools = window.allTools.filter(tool => tool.category === category);
+        displayTools(filteredTools);
+    }
+    
+    // Scroll to tools section
+    document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' });
 }
 
 /**
  * Load Tools from JSON
- * Future implementation when tools.json is ready
  */
 async function loadTools() {
     try {
-        console.log('📦 Loading tools...');
+        console.log('📦 Loading tools from JSON...');
         
         const response = await fetch('data/tools.json');
         
@@ -204,21 +242,53 @@ async function loadTools() {
         }
         
         const data = await response.json();
+        window.allTools = data.tools;
+        
         console.log(`✅ Loaded ${data.tools.length} tools`);
         
-        // Display tools
-        displayTools(data.tools);
+        // Display featured tools first
+        const featuredTools = data.tools.filter(tool => tool.featured);
+        const otherTools = data.tools.filter(tool => !tool.featured);
+        
+        displayTools([...featuredTools, ...otherTools]);
+        
+        // Display categories
+        displayCategories(data.categories);
         
     } catch (error) {
         console.error('❌ Error loading tools:', error);
-        // Show error message to user
-        showErrorMessage('Failed to load tools. Please try again later.');
+        showErrorMessage('Failed to load tools. Please refresh the page.');
     }
 }
 
 /**
+ * Display Categories Filter
+ */
+function displayCategories(categories) {
+    const categoriesContainer = document.getElementById('categoriesFilter');
+    
+    if (!categoriesContainer) return;
+    
+    categoriesContainer.innerHTML = `
+        <button onclick="filterTools('all')" class="category-btn active bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-all hover:shadow-md" aria-selected="true">
+            <i class="fas fa-th mr-2"></i>All Tools
+        </button>
+    `;
+    
+    categories.forEach(category => {
+        const btn = document.createElement('button');
+        btn.onclick = () => filterTools(category.id);
+        btn.className = 'category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-semibold transition-all hover:bg-gray-300';
+        btn.setAttribute('aria-selected', 'false');
+        btn.innerHTML = `<i class="fas ${category.icon} mr-2"></i>${category.name}`;
+        categoriesContainer.appendChild(btn);
+    });
+    
+    console.log('✅ Categories displayed');
+}
+
+/**
  * Display Tools in Grid
- * Future implementation
  */
 function displayTools(tools) {
     const grid = document.getElementById('toolsGrid');
@@ -231,10 +301,27 @@ function displayTools(tools) {
     // Clear existing content
     grid.innerHTML = '';
     
+    if (tools.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-full text-center py-20">
+                <i class="fas fa-search text-gray-300 text-6xl mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">No Tools Found</h3>
+                <p class="text-gray-600 mb-6">Try a different search term or category.</p>
+                <button onclick="loadTools()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Show All Tools
+                </button>
+            </div>
+        `;
+        return;
+    }
+    
     // Add each tool to the grid
-    tools.forEach(tool => {
+    tools.forEach((tool, index) => {
         const toolCard = createToolCard(tool);
         grid.appendChild(toolCard);
+        
+        // Add animation delay
+        toolCard.style.animationDelay = `${index * 0.05}s`;
     });
     
     console.log(`✅ Displayed ${tools.length} tools`);
@@ -242,13 +329,70 @@ function displayTools(tools) {
 
 /**
  * Create Tool Card Element
- * Future implementation
  */
 function createToolCard(tool) {
-    // This will create and return a tool card element
-    // Implementation will be added when tools are ready
-    const card = document.createElement('div');
-    card.className = 'tool-card';
+    const card = document.createElement('article');
+    card.className = 'bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 animate-fadeInUp';
+    
+    // Color mapping
+    const colorClasses = {
+        'blue': { border: 'border-blue-600', gradient: 'from-blue-500 to-blue-700', badge: 'bg-blue-100 text-blue-800' },
+        'red': { border: 'border-red-600', gradient: 'from-red-500 to-red-700', badge: 'bg-red-100 text-red-800' },
+        'purple': { border: 'border-purple-600', gradient: 'from-purple-500 to-purple-700', badge: 'bg-purple-100 text-purple-800' },
+        'green': { border: 'border-green-600', gradient: 'from-green-500 to-green-700', badge: 'bg-green-100 text-green-800' },
+        'teal': { border: 'border-teal-600', gradient: 'from-teal-500 to-teal-700', badge: 'bg-teal-100 text-teal-800' },
+        'orange': { border: 'border-orange-600', gradient: 'from-orange-500 to-orange-700', badge: 'bg-orange-100 text-orange-800' },
+        'indigo': { border: 'border-indigo-600', gradient: 'from-indigo-500 to-indigo-700', badge: 'bg-indigo-100 text-indigo-800' }
+    };
+    
+    const colors = colorClasses[tool.color] || colorClasses['blue'];
+    card.classList.add(colors.border);
+    
+    // Badge mapping
+    const badgeColors = {
+        'NEW': 'bg-green-500',
+        'HOT': 'bg-red-500',
+        'POPULAR': 'bg-orange-500'
+    };
+    
+    card.innerHTML = `
+        ${tool.badge ? `
+            <div class="absolute top-3 right-3 ${badgeColors[tool.badge] || 'bg-gray-500'} text-white px-3 py-1 rounded-full text-xs font-bold uppercase z-10 shadow-lg">
+                ${tool.badge}
+            </div>
+        ` : ''}
+        
+        <div class="bg-gradient-to-br ${colors.gradient} p-6 text-white relative">
+            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur">
+                <i class="fas ${tool.icon} text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">${tool.name}</h3>
+            <p class="text-white/90 text-sm">${tool.category.charAt(0).toUpperCase() + tool.category.slice(1)} Tool</p>
+        </div>
+        
+        <div class="p-6">
+            <p class="text-gray-600 mb-4 leading-relaxed min-h-[60px]">
+                ${tool.description}
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+                ${tool.tags.slice(0, 3).map(tag => `
+                    <span class="${colors.badge} px-3 py-1 rounded-full text-xs font-semibold">${tag}</span>
+                `).join('')}
+            </div>
+            
+            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                ${tool.rating ? `<span><i class="fas fa-star text-yellow-500 mr-1"></i>${tool.rating}/5</span>` : ''}
+                ${tool.users ? `<span><i class="fas fa-users mr-1"></i>${tool.users} users</span>` : ''}
+                <span><i class="fas fa-check-circle text-green-500 mr-1"></i>Free</span>
+            </div>
+            
+            <a href="${tool.file}" class="block w-full text-center bg-gradient-to-r ${colors.gradient} text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                Launch Tool <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    `;
+    
     return card;
 }
 
@@ -256,10 +400,20 @@ function createToolCard(tool) {
  * Show Error Message
  */
 function showErrorMessage(message) {
-    // Simple error display (can be enhanced with a modal or toast)
+    const grid = document.getElementById('toolsGrid');
+    if (grid) {
+        grid.innerHTML = `
+            <div class="col-span-full text-center py-20">
+                <i class="fas fa-exclamation-triangle text-red-500 text-6xl mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Oops! Something went wrong</h3>
+                <p class="text-gray-600 mb-6">${message}</p>
+                <button onclick="loadTools()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Try Again
+                </button>
+            </div>
+        `;
+    }
     console.error('❌', message);
-    
-    // Future: Show user-friendly error notification
 }
 
 /**
@@ -299,4 +453,27 @@ window.TriHub = {
     displayTools
 };
 
-console.log('✅ TriHub JavaScript fully loaded');
+// Add fadeInUp animation CSS if not already present
+if (!document.getElementById('customAnimations')) {
+    const style = document.createElement('style');
+    style.id = 'customAnimations';
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+console.log('✅ TriHub JavaScript fully loaded - Enhanced v2.0');
