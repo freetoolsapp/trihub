@@ -3,6 +3,12 @@
   "lastUpdated": "2026-02-06",
   "categories": [
     {
+      "id": "productivity",
+      "name": "Productivity Tools",
+      "icon": "fa-rocket",
+      "description": "Task management and productivity enhancement tools"
+    },
+    {
       "id": "utility",
       "name": "Utility Tools",
       "icon": "fa-wrench",
@@ -41,6 +47,48 @@
   ],
   "tools": [
     {
+      "id": "daily-task-planner",
+      "name": "Daily Task Planner",
+      "description": "Organize your day with priority management, smart filters, and real-time statistics",
+      "icon": "fa-tasks",
+      "color": "blue",
+      "category": "productivity",
+      "badge": "NEW",
+      "file": "tools/daily-task-planner.html",
+      "featured": true,
+      "tags": ["task", "planner", "productivity", "todo", "priority"],
+      "rating": "4.8",
+      "users": "2.8K"
+    },
+    {
+      "id": "pomodoro-timer",
+      "name": "Pomodoro Focus Timer",
+      "description": "25-minute focus sessions with task tracking and break reminders for maximum productivity",
+      "icon": "fa-stopwatch",
+      "color": "red",
+      "category": "productivity",
+      "badge": "HOT",
+      "file": "tools/pomodoro-timer.html",
+      "featured": true,
+      "tags": ["pomodoro", "timer", "focus", "productivity", "time-management"],
+      "rating": "4.9",
+      "users": "3.5K"
+    },
+    {
+      "id": "weekly-goal-tracker",
+      "name": "Weekly Goal Tracker",
+      "description": "Plan your entire week with visual progress tracking and category organization",
+      "icon": "fa-calendar-check",
+      "color": "purple",
+      "category": "productivity",
+      "badge": "POPULAR",
+      "file": "tools/weekly-goal-tracker.html",
+      "featured": true,
+      "tags": ["goals", "weekly", "tracker", "planning", "progress"],
+      "rating": "4.9",
+      "users": "4.1K"
+    },
+    {
       "id": "pdf-to-word",
       "name": "PDF to Word Converter",
       "description": "Convert PDF files to editable Word documents",
@@ -50,7 +98,9 @@
       "badge": "HOT",
       "file": "tools/utility/pdf-to-word.html",
       "featured": true,
-      "tags": ["pdf", "word", "converter", "document"]
+      "tags": ["pdf", "word", "converter", "document"],
+      "rating": "4.7",
+      "users": "5.2K"
     },
     {
       "id": "qr-generator",
@@ -62,7 +112,9 @@
       "badge": "POPULAR",
       "file": "tools/utility/qrcode-generator.html",
       "featured": true,
-      "tags": ["qr", "code", "generator", "barcode"]
+      "tags": ["qr", "code", "generator", "barcode"],
+      "rating": "4.6",
+      "users": "3.9K"
     },
     {
       "id": "password-generator",
@@ -74,7 +126,9 @@
       "badge": "NEW",
       "file": "tools/utility/password-generator.html",
       "featured": false,
-      "tags": ["password", "security", "generator"]
+      "tags": ["password", "security", "generator"],
+      "rating": "4.5",
+      "users": "2.1K"
     },
     {
       "id": "gpa-calculator",
@@ -86,7 +140,9 @@
       "badge": "POPULAR",
       "file": "tools/student/gpa-calculator.html",
       "featured": true,
-      "tags": ["gpa", "calculator", "student", "grades"]
+      "tags": ["gpa", "calculator", "student", "grades"],
+      "rating": "4.8",
+      "users": "6.3K"
     },
     {
       "id": "plagiarism-checker",
@@ -98,7 +154,9 @@
       "badge": "HOT",
       "file": "tools/student/plagiarism-checker.html",
       "featured": true,
-      "tags": ["plagiarism", "checker", "content", "duplicate"]
+      "tags": ["plagiarism", "checker", "content", "duplicate"],
+      "rating": "4.7",
+      "users": "4.8K"
     },
     {
       "id": "image-resizer",
@@ -110,7 +168,9 @@
       "badge": "NEW",
       "file": "tools/design/image-resizer.html",
       "featured": false,
-      "tags": ["image", "resize", "compress", "photo"]
+      "tags": ["image", "resize", "compress", "photo"],
+      "rating": "4.6",
+      "users": "3.2K"
     },
     {
       "id": "html-minifier",
@@ -122,7 +182,9 @@
       "badge": "HOT",
       "file": "tools/webdev/html-minifier.html",
       "featured": false,
-      "tags": ["html", "minify", "compress", "optimize"]
+      "tags": ["html", "minify", "compress", "optimize"],
+      "rating": "4.5",
+      "users": "2.7K"
     },
     {
       "id": "css-minifier",
@@ -134,7 +196,9 @@
       "badge": "NEW",
       "file": "tools/webdev/css-minifier.html",
       "featured": false,
-      "tags": ["css", "minify", "compress", "optimize"]
+      "tags": ["css", "minify", "compress", "optimize"],
+      "rating": "4.4",
+      "users": "2.3K"
     },
     {
       "id": "meta-description-generator",
@@ -146,7 +210,9 @@
       "badge": "POPULAR",
       "file": "tools/seo/meta-description-generator.html",
       "featured": true,
-      "tags": ["meta", "seo", "description", "generator"]
+      "tags": ["meta", "seo", "description", "generator"],
+      "rating": "4.7",
+      "users": "3.6K"
     },
     {
       "id": "keyword-density-checker",
@@ -158,12 +224,14 @@
       "badge": "HOT",
       "file": "tools/seo/keyword-density-checker.html",
       "featured": false,
-      "tags": ["keyword", "density", "seo", "analysis"]
+      "tags": ["keyword", "density", "seo", "analysis"],
+      "rating": "4.6",
+      "users": "2.9K"
     }
   ],
   "stats": {
-    "totalTools": 10,
-    "categories": 6,
-    "featuredTools": 5
+    "totalTools": 13,
+    "categories": 7,
+    "featuredTools": 8
   }
 }
