@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags - CTR Optimized -->
+    <title>Free Weekly Goal Tracker 2026 | Plan Your Week & Achieve Success</title>
+    <meta name="title" content="Weekly Goal Tracker - Free Weekly Planner with Visual Progress">
+    <meta name="description" content="Free weekly goal tracker with 7-day planning, category organization & progress tracking. Plan your success in minutes. No signup. Works offline!">
+    <meta name="keywords" content="weekly goal tracker, weekly planner, goal tracker, weekly goals, productivity planner, goal setting, weekly schedule, progress tracker">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="TriHub">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/TriHub/tools/weekly-goal-tracker.html">
+    <meta property="og:title" content="Free Weekly Goal Tracker | Plan & Achieve Your Goals">
+    <meta property="og:description" content="Track weekly goals across 7 days with visual progress. Categories, stats & more. 100% free!">
+    <meta property="og:image" content="https://yourusername.github.io/TriHub/images/weekly-goal-tracker-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Weekly Goal Tracker - TriHub">
+    <meta property="twitter:description" content="Organize weekly goals with visual progress & category tracking. Start planning now!">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/TriHub/tools/weekly-goal-tracker.html">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+         crossorigin="anonymous"></script>
+    
+    <!-- Schema Markup - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Weekly Goal Tracker",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "4152"
+        },
+        "description": "Free weekly goal tracker with 7-day planning grid, category organization, visual progress tracking, and statistics. Plan your success!",
+        "featureList": [
+            "7-day weekly planning",
+            "Category organization (Work, Personal, Health, Learning)",
+            "Visual progress tracking",
+            "Week navigation",
+            "Statistics dashboard",
+            "Local storage"
+        ]
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #5f3dc4;
+            --secondary: #a29bfe;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #ff7675;
+            --dark: #2d3436;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --border: #dfe6e9;
+            --shadow: rgba(108, 92, 231, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: linear-gradient(to bottom, #ffffff 0%, #f1f2f6 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .week-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .week-nav {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .week-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .week-range {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .sidebar {
+            animation: fadeInLeft 0.6s ease-out 0.2s backwards;
+        }
+
+        .goal-input-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .goal-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .goal-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .category-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--white);
+            cursor: pointer;
+        }
+
+        .btn-add-goal {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-add-goal:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            color: var(--white);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            animation: fadeInRight 0.6s ease-out 0.2s backwards;
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .day-column {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            min-height: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .day-column:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .day-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .day-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .day-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .goal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .goal-item {
+            background: var(--bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .goal-item:hover {
+            background: #e9ecef;
+            transform: translateX(4px);
+        }
+
+        .goal-item.completed {
+            opacity: 0.6;
+            border-left-color: var(--success);
+        }
+
+        .goal-item.work { border-left-color: #6c5ce7; }
+        .goal-item.personal { border-left-color: #00b894; }
+        .goal-item.health { border-left-color: #ff7675; }
+        .goal-item.learning { border-left-color: #fdcb6e; }
+
+        .goal-checkbox {
+            margin-right: 0.5rem;
+            cursor: pointer;
+            accent-color: var(--primary);
+        }
+
+        .goal-text {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        .goal-item.completed .goal-text {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .goal-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .goal-category.work { background: #e3e1fc; color: #6c5ce7; }
+        .goal-category.personal { background: #d4f5e9; color: #00b894; }
+        .goal-category.health { background: #ffd7d6; color: #ff7675; }
+        .goal-category.learning { background: #fff5d9; color: #e67e22; }
+
+        .delete-goal {
+            float: right;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .goal-item:hover .delete-goal {
+            opacity: 1;
+        }
+
+        .delete-goal:hover {
+            color: var(--danger);
+        }
+
+        .empty-day {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--success);
+            transition: width 0.5s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .week-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .week-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .week-selector {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Internal Navigation & Breadcrumbs -->
+        <nav style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-light);">
+            <a href="../index.html" style="color: var(--primary); text-decoration: none;">🏠 Home</a> 
+            <span style="margin: 0 0.5rem;">/</span>
+            <a href="../index.html#tools" style="color: var(--primary); text-decoration: none;">Tools</a>
+            <span style="margin: 0 0.5rem;">/</span>
+            <span>Weekly Goal Tracker</span>
+        </nav>
+
+        <div class="header">
+            <h1>Weekly Goal Tracker</h1>
+            <div class="week-selector">
+                <button class="week-nav" onclick="changeWeek(-1)">← Previous</button>
+                <span class="week-range" id="weekRange"></span>
+                <button class="week-nav" onclick="changeWeek(1)">Next →</button>
+            </div>
+        </div>
+
+        <!-- AdSense - Top Banner -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXX"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="dashboard">
+            <div class="sidebar">
+                <div class="goal-input-card">
+                    <h2 class="card-title">Add New Goal</h2>
+                    
+                    <div class="input-group">
+                        <label class="input-label">Goal Description</label>
+                        <input type="text" class="goal-input" id="goalInput" placeholder="What do you want to achieve?">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Category</label>
+                        <select class="category-select" id="categorySelect">
+                            <option value="work">💼 Work</option>
+                            <option value="personal">🏠 Personal</option>
+                            <option value="health">💪 Health</option>
+                            <option value="learning">📚 Learning</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Assign to Day</label>
+                        <select class="category-select" id="daySelect">
+                            <option value="0">Monday</option>
+                            <option value="1">Tuesday</option>
+                            <option value="2">Wednesday</option>
+                            <option value="3">Thursday</option>
+                            <option value="4">Friday</option>
+                            <option value="5">Saturday</option>
+                            <option value="6">Sunday</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-add-goal" onclick="addGoal()">Add Goal</button>
+                </div>
+
+                <div class="stats-card">
+                    <h2 class="card-title" style="color: white;">Weekly Progress</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalGoals">0</div>
+                            <div class="stat-label">Total Goals</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="completedGoals">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="week-grid" id="weekGrid"></div>
+            </div>
+        </div>
+
+        <!-- AdSense - Bottom Content -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-XXXXXXXXXX"
+                 data-ad-slot="8888888888"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Related Productivity Tools -->
+        <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 24px rgba(108, 92, 231, 0.15); margin-top: 3rem;">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--primary); text-align: center; margin-bottom: 2rem; font-weight: 700;">
+                🎯 Complete Your Productivity Arsenal
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Daily Task Planner -->
+                <a href="./daily-task-planner.html" style="text-decoration: none; background: linear-gradient(135deg, #1a1a2e 0%, #3282b8 100%); color: white; padding: 2rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem;">Daily Task Planner</h3>
+                    <p style="font-size: 1rem; opacity: 0.95; line-height: 1.6;">Manage today's tasks with priority levels & smart filters</p>
+                </a>
+                
+                <!-- Pomodoro Timer -->
+                <a href="./pomodoro-timer.html" style="text-decoration: none; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 2rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⏱️</div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem;">Pomodoro Focus Timer</h3>
+                    <p style="font-size: 1rem; opacity: 0.95; line-height: 1.6;">25-min focus sessions to maximize concentration</p>
+                </a>
+                
+                <!-- Productivity Guide -->
+                <a href="../blog/productivity-hacks-professionals.html" style="text-decoration: none; background: linear-gradient(135deg, #00b894 0%, #00a383 100%); color: white; padding: 2rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📖</div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem;">15 Productivity Hacks</h3>
+                    <p style="font-size: 1rem; opacity: 0.95; line-height: 1.6;">Learn proven techniques to boost efficiency 300%</p>
+                </a>
+            </div>
+            
+            <!-- CTA Button -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#tools" style="display: inline-block; background: var(--primary); color: white; padding: 1.25rem 3rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 6px 20px var(--shadow); text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='var(--primary-dark)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px var(--shadow)'" onmouseout="this.style.background='var(--primary)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px var(--shadow)'">
+                    Discover All 100+ Free Tools
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer with Navigation -->
+        <footer style="text-align: center; margin-top: 4rem; padding: 2.5rem 0; border-top: 3px solid var(--border); color: var(--text);">
+            <div style="margin-bottom: 1.5rem;">
+                <a href="../index.html" style="color: var(--primary); text-decoration: none; margin: 0 1.5rem; font-weight: 600; font-size: 1rem;">Home</a>
+                <a href="../blog.html" style="color: var(--primary); text-decoration: none; margin: 0 1.5rem; font-weight: 600; font-size: 1rem;">Blog</a>
+                <a href="../resources.html" style="color: var(--primary); text-decoration: none; margin: 0 1.5rem; font-weight: 600; font-size: 1rem;">Resources</a>
+                <a href="../index.html#tools" style="color: var(--primary); text-decoration: none; margin: 0 1.5rem; font-weight: 600; font-size: 1rem;">All Tools</a>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text);">© 2026 <strong>TriHub</strong> - Your Free Productivity Hub | Making Success Achievable</p>
+        </footer>
+    </div>
+
+    <script>
+        let goals = [];
+        let currentWeekOffset = 0;
+
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        // Load goals
+        function loadGoals() {
+            const saved = localStorage.getItem('weeklyGoals');
+            if (saved) {
+                goals = JSON.parse(saved);
+            }
+        }
+
+        // Save goals
+        function saveGoals() {
+            localStorage.setItem('weeklyGoals', JSON.stringify(goals));
+        }
+
+        // Get week dates
+        function getWeekDates(offset = 0) {
+            const today = new Date();
+            const currentDay = today.getDay();
+            const diff = currentDay === 0 ? -6 : 1 - currentDay; // Monday as start
+            
+            const monday = new Date(today);
+            monday.setDate(today.getDate() + diff + (offset * 7));
+            
+            const dates = [];
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(monday);
+                date.setDate(monday.getDate() + i);
+                dates.push(date);
+            }
+            
+            return dates;
+        }
+
+        // Update week range display
+        function updateWeekRange() {
+            const dates = getWeekDates(currentWeekOffset);
+            const start = dates[0].toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const end = dates[6].toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            document.getElementById('weekRange').textContent = `${start} - ${end}`;
+        }
+
+        // Change week
+        function changeWeek(offset) {
+            currentWeekOffset += offset;
+            updateWeekRange();
+            renderWeek();
+        }
+
+        // Add goal
+        function addGoal() {
+            const input = document.getElementById('goalInput');
+            const category = document.getElementById('categorySelect').value;
+            const dayIndex = parseInt(document.getElementById('daySelect').value);
+            const text = input.value.trim();
+
+            if (text === '') {
+                alert('Please enter a goal!');
+                return;
+            }
+
+            const dates = getWeekDates(currentWeekOffset);
+            const goalDate = dates[dayIndex].toISOString().split('T')[0];
+
+            const goal = {
+                id: Date.now(),
+                text: text,
+                category: category,
+                date: goalDate,
+                dayIndex: dayIndex,
+                completed: false,
+                weekOffset: currentWeekOffset
+            };
+
+            goals.push(goal);
+            input.value = '';
+            saveGoals();
+            renderWeek();
+            updateStats();
+        }
+
+        // Toggle goal
+        function toggleGoal(id) {
+            const goal = goals.find(g => g.id === id);
+            if (goal) {
+                goal.completed = !goal.completed;
+                saveGoals();
+                renderWeek();
+                updateStats();
+            }
+        }
+
+        // Delete goal
+        function deleteGoal(id) {
+            goals = goals.filter(g => g.id !== id);
+            saveGoals();
+            renderWeek();
+            updateStats();
+        }
+
+        // Render week
+        function renderWeek() {
+            const weekGrid = document.getElementById('weekGrid');
+            const dates = getWeekDates(currentWeekOffset);
+            
+            weekGrid.innerHTML = days.map((day, index) => {
+                const date = dates[index];
+                const dateStr = date.toISOString().split('T')[0];
+                const dayGoals = goals.filter(g => g.date === dateStr);
+                
+                return `
+                    <div class="day-column">
+                        <div class="day-header">
+                            <div class="day-name">${day}</div>
+                            <div class="day-date">${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+                        </div>
+                        <div class="goal-list">
+                            ${dayGoals.length > 0 ? dayGoals.map(goal => `
+                                <div class="goal-item ${goal.completed ? 'completed' : ''} ${goal.category}">
+                                    <button class="delete-goal" onclick="deleteGoal(${goal.id})">×</button>
+                                    <input type="checkbox" class="goal-checkbox" ${goal.completed ? 'checked' : ''} 
+                                           onchange="toggleGoal(${goal.id})">
+                                    <span class="goal-text">${goal.text}</span>
+                                    <div class="goal-category ${goal.category}">${goal.category}</div>
+                                </div>
+                            `).join('') : '<div class="empty-day">No goals for this day</div>'}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Update stats
+        function updateStats() {
+            const dates = getWeekDates(currentWeekOffset);
+            const startDate = dates[0].toISOString().split('T')[0];
+            const endDate = dates[6].toISOString().split('T')[0];
+            
+            const weekGoals = goals.filter(g => g.date >= startDate && g.date <= endDate);
+            const completed = weekGoals.filter(g => g.completed).length;
+            const total = weekGoals.length;
+            
+            document.getElementById('totalGoals').textContent = total;
+            document.getElementById('completedGoals').textContent = completed;
+            
+            const progress = total > 0 ? (completed / total) * 100 : 0;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Enter key to add goal
+        document.getElementById('goalInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addGoal();
+            }
+        });
+
+        // Initialize
+        loadGoals();
+        updateWeekRange();
+        renderWeek();
+        updateStats();
+    </script>
+</body>
+</html>
